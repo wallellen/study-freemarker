@@ -1,0 +1,208 @@
+body input li textarea {
+    font: 14px/1.75 "Microsoft YaHei", "Times New Roman";
+}
+
+.page-container {
+    margin: 10px auto;
+    width: 1000px;
+}
+
+.page-container .panel {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.page-container .panel .panel-title {
+    font-weight: bold;
+    font-size: 16px;
+    background: #ccc;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.page-container .panel .panel-body {
+    padding: 10px 20px;
+}
+
+.page-container .panel .panel-body:after {
+    content: '';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.page-container .row {
+}
+
+.page-container .row:after {
+    content: '';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.page-container .control-group {
+    margin: 10px auto;
+}
+
+.page-container .control-group label {
+    display: block;
+    float: left;
+}
+
+.page-container .form-control {
+    line-height: 1.5em;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 3px 5px;
+}
+
+.col-em-5 {
+    width: 5em;
+}
+
+.clearfix {
+    content: '';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.page-container table.table {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.page-container table.table thead tr th {
+    background: #aaa;
+    color: #fff;
+}
+
+.page-container .btn-bar {
+    margin: 5px auto;
+}
+
+.page-container .btn-bar:after {
+    content: '';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.page-container .pull-right {
+    float: right;
+}
+
+.error {
+    font-size: smaller;
+    color: #f55;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.page-container ul.demo {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.page-container ul.demo li {
+    margin: 20px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.page-container ul.demo li .title {
+    padding: 8px 10px;
+    font-weight: bold;
+    display: block;
+    background: #ccc;
+}
+
+.page-container ul.demo li .content {
+    display: block;
+}
+
+.page-container ul.demo li .content:after {
+    content: '';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.page-container ul.demo li .express, .page-container ul.demo li .result {
+    display: block;
+    float: left;
+    padding: 8px 10px;
+    font: 13px Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+.page-container ul.demo li .express {
+    border-right: 1px solid #ccc;
+    width: 30em;
+}
+
+.page-container .menu {
+    margin: 10px auto;
+}
+
+.page-container .menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page-container .menu ul:after {
+    content: '';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.page-container .menu ul li {
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+
+.page-container .menu ul li a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+
+.page-container .menu ul li a:hover {
+    background: #ddd;
+}

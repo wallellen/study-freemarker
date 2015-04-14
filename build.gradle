@@ -1,0 +1,109 @@
+import org.akhikhl.gretty.GrettyPlugin
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: GrettyPlugin
+
+// Define the JDK version for source and target
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+/**
+ * Define the version of current project
+ */
+ext {
+    buildCount = System.getenv("BUILD_COUNT") ?: '0'
+    projectVersion = "0.0.${buildCount}"
+}
+
+/**
+ * Define the repositories and dependencies use in current script
+ */
+buildscript {
+    repositories {
+        jcenter()
+    }
+    // Add gretty package
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:latest.release'
+    }
+}
+
+/**
+ * Config the idea plugin
+ */
+idea {
+    project {
+        jdkName = '1.8'
+        languageLevel = '1.8'
+    }
+}
+
+/**
+ * Config the gretty plugin
+ */
+gretty {
+    servletContainer = 'jetty9'
+    contextPath = ''
+    scanInterval = 1    // Set the interview of auto deployment
+}
+
+/**
+ * Define the repositories for current project
+ */
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+/**
+ * Set the encode of java source
+ */
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+/**
+ * Config the source set
+ */
+sourceSets {
+    main {
+        output.resourcesDir = output.classesDir
+    }
+}
+
+/**
+ * Define the dependencies for current project
+ */
+dependencies {
+    compile "javax.servlet:javax.servlet-api:latest.release",
+            "javax.servlet.jsp:jsp-api:latest.release",
+            "org.freemarker:freemarker:latest.release"
+    testCompile 'junit:junit:latest.release',
+            'org.hamcrest:hamcrest-all:latest.release'
+}
+
+/**
+ * Pack the war package, to deployed the project to the server (like tomcat)
+ */
+war {
+    archiveName = "study-freemarker.war"
+    destinationDir = file('out')
+
+    manifest {
+        attributes(
+                'Min-Java-Version': '1.8.0'
+        )
+    }
+}
+
+task copyResources << {
+    copy {
+        from 'src/main/java'
+        include '**/*.ftl'
+        into sourceSets.main.output.classesDir
+    }
+}
+
+processResources.dependsOn copyResources
